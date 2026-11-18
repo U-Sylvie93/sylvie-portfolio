@@ -1,6 +1,6 @@
 # Frameless homepage hero
 
-The homepage now places the portrait directly against the emerald page background, with a soft radial glow. The photo card, border, rounded photo panel, caption and outer hero card treatment are removed. The transparent portrait uses Next.js Image with object-fit: contain, no filters, and a subtle bottom fade. Mobile stacks the existing hero content above the portrait. About retains the original photograph; project cards, seven certificates and CV links are preserved.
+The homepage now places the portrait directly against the emerald page background, with a defined emerald circular backdrop, thin concentric ring and soft radial glow matching the supplied reference. The photo card, border, rounded photo panel, caption and outer hero card treatment are removed. The transparent portrait uses Next.js Image with object-fit: contain, no filters, and a subtle bottom fade. Mobile stacks the existing hero content above the portrait. About retains the original photograph; project cards, seven certificates and CV links are preserved.
 
 ## Image asset
 - Saved project asset: `C:\Users\Sylvie\Projects\sylvie-portfolio\public\images\sylvie-portrait-cutout.png`.
@@ -28,5 +28,3 @@ cd /d "C:\Users\Sylvie\Projects\sylvie-portfolio"
 npm run dev
 ```
 Open the Local URL printed by Next.js, normally http://localhost:3000.
-
-

@@ -2006,3 +2006,25 @@ textarea::placeholder {
   .hero::before { background: radial-gradient(ellipse at 50% 76%, color-mix(in srgb, var(--mint) 15%, transparent), transparent 55%); }
   .hero-bottom { margin-top: 0; }
 }
+/* Circular emerald portrait backdrop, matching the supplied reference. */
+.portrait-halo {
+  width: min(92%, 440px);
+  max-width: 440px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--mint) 44%, transparent);
+  background:
+    radial-gradient(circle at 36% 28%, color-mix(in srgb, var(--mint) 30%, transparent), transparent 70%),
+    linear-gradient(145deg, color-mix(in srgb, var(--mint) 16%, transparent), color-mix(in srgb, var(--mint) 4%, transparent));
+  box-shadow: 0 0 85px color-mix(in srgb, var(--mint) 16%, transparent), inset 0 0 55px color-mix(in srgb, var(--mint) 9%, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+.portrait-halo::before {
+  inset: 12px;
+  border: 1px solid color-mix(in srgb, var(--mint) 15%, transparent);
+}
+:root[data-theme="light"] .portrait-halo {
+  border-color: color-mix(in srgb, var(--mint) 30%, transparent);
+  box-shadow: 0 0 70px color-mix(in srgb, var(--mint) 10%, transparent), inset 0 0 45px color-mix(in srgb, var(--mint) 6%, transparent);
+}
