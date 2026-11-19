@@ -80,9 +80,6 @@ const repo = (name: string) => `https://github.com/U-Sylvie93/${name}`;
 export const projects: Project[] = [
   {
     name: "E-learning-mkscholars",
-    image: "/images/projects/learning-platform.svg",
-    imageAlt: "Illustration of an open book, connected lessons and a play symbol",
-    imageKind: "illustration",
     ownership: "Team Project",
     title: "MK Scholars · Learning Platform",
     featured: true,
@@ -107,9 +104,6 @@ export const projects: Project[] = [
   },
   {
     name: "mk-innovation",
-    image: "/images/projects/business-web.svg",
-    imageAlt: "Illustration of layered web pages and a geometric emerald brand mark",
-    imageKind: "illustration",
     ownership: "Personal Project",
     title: "MK Innovation · Business Website",
     featured: true,
@@ -126,9 +120,6 @@ export const projects: Project[] = [
   },
   {
     name: "MKInnovationLtd",
-    image: "/images/projects/backend-systems.svg",
-    imageAlt: "Illustration of connected application layers and a database",
-    imageKind: "illustration",
     ownership: "Personal Project",
     title: "MK Innovation Ltd · Laravel Website",
     description:
@@ -144,9 +135,6 @@ export const projects: Project[] = [
   },
   {
     name: "E-Learning",
-    image: "/images/projects/course-learning.svg",
-    imageAlt: "Illustration of course books, a graduation cap and a lesson player",
-    imageKind: "illustration",
     ownership: "Personal Project",
     title: "E-Learning · Course Website",
     description:
@@ -159,9 +147,6 @@ export const projects: Project[] = [
   },
   {
     name: "Sylvie-website",
-    image: "/images/projects/personal-portfolio.svg",
-    imageAlt: "Illustration of a personal profile, design panels and code brackets",
-    imageKind: "illustration",
     ownership: "Personal Project",
     title: "Sylvie · Earlier Portfolio",
     description:

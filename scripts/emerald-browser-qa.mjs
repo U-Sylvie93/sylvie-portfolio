@@ -52,8 +52,10 @@ let activeBrowser;
   await checkDownload(page.locator('.nav-cv a'));
   console.log('PASS: seven certificate entries (four technical / three leadership), new C# details, all CV URLs, PDF HTTP content/hash and navbar download.');
   assert.equal(await page.locator('.hero img, .profile-photo').count(), 2);
-  assert.equal(await page.locator('.project-image img').count(), 5);
-  assert.equal(await page.locator('.project-image-label').count(), 5);
+  assert.equal(await page.locator('.project-image img').count(), 0);
+  assert.equal(await page.locator('.logo-mark, .wordmark').count(),0);
+  assert.equal(await page.locator('.project-card').first().locator('.project-meta').count(),1);
+  assert.equal(await page.locator('.project-image-label').count(), 0);
   const portrait=page.locator('.hero-profile-photo');
   assert.equal(await portrait.getAttribute('alt'),'Umutoniwase Sylvie');
   for(const img of await page.locator('.hero img, .profile-photo, .project-image img').all()) {
@@ -84,20 +86,27 @@ let activeBrowser;
     for (const width of [320,375,390,430,768,1024,1440]) {
       await page.setViewportSize({width,height:1000});
       await page.evaluate(()=>window.scrollTo(0,0));
+      await page.locator('.hero-profile-photo').evaluate(async el=>{
+        await el.decode();
+        await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      });
       const measurements=await page.evaluate(()=>{
         const hero=document.querySelector('.hero-grid').getBoundingClientRect();
         const copy=document.querySelector('.hero-copy').getBoundingClientRect();
         const portrait=document.querySelector('.hero-portrait-image').getBoundingClientRect();
-        return {overflow:document.documentElement.scrollWidth>innerWidth,hero:[hero.left,hero.right],copy:copy.bottom,portrait:portrait.top,cols:getComputedStyle(document.querySelector('.hero-grid')).gridTemplateColumns,buttons:[...document.querySelectorAll('.hero-buttons a')].map(a=>a.getBoundingClientRect().height)};
+        const image=document.querySelector('.hero-profile-photo').getBoundingClientRect();
+        return {imageWidth:image.width,imageHeight:image.height,overflow:document.documentElement.scrollWidth>innerWidth,hero:[hero.left,hero.right],copy:copy.bottom,portrait:portrait.top,cols:getComputedStyle(document.querySelector('.hero-grid')).gridTemplateColumns,buttons:[...document.querySelectorAll('.hero-buttons a')].map(a=>a.getBoundingClientRect().height)};
       });
       assert.equal(measurements.overflow,false,`${theme} ${width}: horizontal overflow`);
+      assert.ok(measurements.imageWidth>0 && measurements.imageHeight>0, 'Portrait remains visible at every width');
       assert.ok(measurements.hero[0]>=0 && measurements.hero[1]<=width);
       assert.ok(measurements.buttons.every(height=>height>=44));
       if(width<=760) assert.ok(measurements.portrait>measurements.copy,'Mobile portrait follows text');
       if([390,768,1440].includes(width)) await page.screenshot({path:path.join(out,`emerald-${theme}-${width}.png`)});
     }
     await page.locator('#projects').scrollIntoViewIfNeeded();
-    await page.screenshot({path:path.join(out,`emerald-projects-${theme}.png`)});
+    await page.locator('#projects').screenshot({path:path.join(out,`emerald-projects-${theme}.png`)});
+    await page.locator('#skills').screenshot({path:path.join(out,`cleanup-skills-${theme}.png`)});
   }
   await page.setViewportSize({width:390,height:844});
   await page.evaluate(()=>window.scrollTo(0,0));
@@ -115,7 +124,7 @@ let activeBrowser;
   await page.getByRole('button',{name:/Send Message/i}).click();
   assert.equal(await page.locator('[name="name"]').getAttribute('aria-invalid'),'true');
   assert.deepEqual(errors,[]);
-  console.log('PASS: five repositories, ownership, filters, seven credentials, portrait and five project images, CTA links, 14 responsive/theme combinations, theme persistence, mobile navigation/Escape/focus, CV downloads, focus outline, reduced motion and form validation.');
+  console.log('PASS: five repositories, ownership, filters, seven credentials, portrait, compact project cards and plain-name header, CTA links, 14 responsive/theme combinations, theme persistence, mobile navigation/Escape/focus, CV downloads, focus outline, reduced motion and form validation.');
   await page.setViewportSize({width:1440,height:1000});
   await page.locator('#certifications').scrollIntoViewIfNeeded();
   await page.screenshot({path:path.join(out,'phase5-certifications-light-desktop.png')});

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Award, Code2, Users } from "lucide-react";
+import { ArrowUpRight, Code2, Users } from "lucide-react";
 import { certifications, type Certification } from "@/data/certifications";
 import { Reveal } from "./ui";
 const dateFormat = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
@@ -22,8 +22,8 @@ export function CertificationCard({ certificate }: { certificate: Certification 
 }
 export function Certifications() {
   return <section id="certifications" className="section container certifications-section" aria-labelledby="certifications-title"><Reveal>
-    <span className="eyebrow"><Award size={14} aria-hidden="true" /> CONTINUED LEARNING</span>
-    <div className="section-heading"><div><h2 id="certifications-title">Certifications<span className="mint">.</span></h2><p>Structured technical learning, alongside leadership development.</p></div></div>
+
+    <div className="section-heading"><div><h2 id="certifications-title">Certifications</h2><p>Structured technical learning, alongside leadership development.</p></div></div>
     <h3 className="certificate-group-title">Technical Certifications</h3>
     <div className="certification-grid">{certifications.filter(c => c.category === "Technical").map(c => <CertificationCard key={c.name} certificate={c} />)}</div>
     <div className="leadership-heading"><span className="small-label">PROFESSIONAL DEVELOPMENT</span><h3>Leadership &amp; Professional Development</h3></div>

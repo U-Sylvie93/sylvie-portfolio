@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import { CvButton, Reveal, SocialLinks } from "./ui";
 
@@ -23,7 +23,6 @@ export function Hero() {
           </div>
           <div className="hero-social">
             <SocialLinks labeled />
-            <span className="vertical-rule" aria-hidden="true" />
             <CvButton />
           </div>
         </Reveal>
@@ -40,10 +39,6 @@ export function Hero() {
             />
           </div>
         </Reveal>
-      </div>
-      <div className="hero-bottom">
-        <span>Useful interfaces. Reliable logic. Thoughtful code.</span>
-        <a href="#about">Get to know me <ArrowDown size={14} aria-hidden="true" /></a>
       </div>
     </section>
   );

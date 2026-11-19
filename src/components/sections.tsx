@@ -1,9 +1,7 @@
 import {
-  Atom,
   Braces,
   Code2,
   Database,
-  GitBranch,
   GraduationCap,
   Layers3,
   Terminal,
@@ -14,47 +12,12 @@ import {
   education,
   experience,
   journey,
-  profile,
   skills,
 } from "@/data/portfolio";
-import { Github } from "./brand-icons";
 import { Reveal } from "./ui";
 import { ProfilePhoto } from "./profile-photo";
 const skillIcons = [Code2, Braces, Database, Terminal];
-const technologyMarks: Record<string, string> = {
-  HTML5: "H5",
-  CSS3: "C3",
-  JavaScript: "JS",
-  TypeScript: "TS",
-  "Next.js": "N",
-  "Tailwind CSS": "TW",
-  PHP: "php",
-  "C#": "C#",
-  ".NET": ".N",
-  "REST APIs": "API",
-  SQL: "SQL",
-  MySQL: "My",
-  "Database Design / DBMS": "DB",
-  "VS Code": "</>",
-};
-function SkillBadge({ name }: { name: string }) {
-  const Icon =
-    name === "React"
-      ? Atom
-      : name === "Git"
-        ? GitBranch
-        : name === "GitHub"
-          ? Github
-          : null;
-  return (
-    <span className="technology-badge">
-      <span className="technology-mark" aria-hidden="true">
-        {Icon ? <Icon size={14} /> : technologyMarks[name]}
-      </span>
-      {name}
-    </span>
-  );
-}
+function SkillBadge({ name }: { name: string }) { return <span className="technology-badge">{name}</span>; }
 export function About() {
   return (
     <section
@@ -64,21 +27,8 @@ export function About() {
     >
       <Reveal className="about-grid">
         <div>
-          <span className="eyebrow">ABOUT ME</span>
-          <h2 id="about-title">
-            I like understanding
-            <br />
-            how it all fits together<span className="mint">.</span>
-          </h2>
+          <h2 id="about-title">About me</h2>
           <ProfilePhoto />
-          <div className="about-focus">
-            <Code2 size={17} />
-            Interface
-            <Braces size={17} />
-            Logic
-            <Database size={17} />
-            Data
-          </div>
         </div>
         <div className="about-copy">
           <p className="lead">I’m Sylvie, a Full-Stack Web Developer and Information Technology student at the University of Rwanda.</p>
@@ -105,31 +55,12 @@ export function Skills() {
         <Reveal>
           <div className="section-heading">
             <div>
-              <span className="eyebrow">TECHNICAL SKILLS</span>
+
               <h2 id="skills-title">
-                Across the full stack<span className="mint">.</span>
+                Technical skills
               </h2>
               <p>From the browser to the application logic and its data.</p>
             </div>
-          </div>
-          <div
-            className="stack-path" role="img"
-            aria-label="Full-stack development connects frontend, backend and database"
-          >
-            <span>
-              <Code2 size={16} />
-              Frontend
-            </span>
-            <i aria-hidden="true" />
-            <span>
-              <Braces size={16} />
-              Backend
-            </span>
-            <i aria-hidden="true" />
-            <span>
-              <Database size={16} />
-              Database
-            </span>
           </div>
           <div className="skills-grid">
             {skills.map((group, index) => {
@@ -153,7 +84,6 @@ export function Skills() {
           <div className="capabilities">
             {capabilities.map((item) => (
               <span key={item}>
-                <span className="tiny-dot" />
                 {item}
               </span>
             ))}
@@ -172,10 +102,7 @@ export function Background() {
         aria-labelledby="journey-title"
       >
         <Reveal>
-          <span className="eyebrow">DEVELOPER JOURNEY</span>
-          <h2 id="journey-title">
-            Building, learning, improving<span className="mint">.</span>
-          </h2>
+          <h2 id="journey-title">Developer journey</h2>
           {experience.length ? (
             experience.map((item) => (
               <article
@@ -217,10 +144,7 @@ export function Background() {
         aria-labelledby="education-title"
       >
         <Reveal>
-          <span className="eyebrow">EDUCATION</span>
-          <h2 id="education-title">
-            A foundation to build on<span className="mint">.</span>
-          </h2>
+          <h2 id="education-title">Education</h2>
           {education.length ? (
             education.map((item) => (
               <article
@@ -257,36 +181,3 @@ export function Background() {
     </div>
   );
 }
-export function GitHubSection() {
-  return (
-    <section
-      className="container github-section"
-      aria-labelledby="github-heading"
-    >
-      <div className="github-banner">
-        <div className="github-symbol">
-          <Github size={42} />
-        </div>
-        <div>
-          <span className="eyebrow">PROJECTS & EXPLORATION</span>
-          <h2 id="github-heading">More Code on GitHub</h2>
-          <p>
-            Explore additional projects, experiments, and development work in my
-            repositories.
-          </p>
-        </div>
-        <a
-          className="button secondary"
-          href={profile.github}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Explore My GitHub
-          <Code2 size={17} />
-        </a>
-      </div>
-    </section>
-  );
-}
-
-

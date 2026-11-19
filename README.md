@@ -4,9 +4,9 @@ Personal developer portfolio built with Next.js App Router, React, TypeScript, T
 
 ## Current portfolio
 
-- Emerald theme with dark/light modes and responsive layouts.
+- Restrained emerald theme with dark/light modes, a plain-name header and responsive layouts.
 - Frameless hero with a transparent portrait and soft emerald glow; original portrait in About.
-- Five curated projects with accurate technologies, ownership disclosures, illustrative covers and repository links.
+- Five compact, text-led project cards with accurate technologies, ownership disclosures and repository links.
 - Seven certifications: four technical and three leadership/professional development.
 - Downloadable professional CV from both navigation and Hero.
 - University of Rwanda IT education and developer journey.
@@ -51,7 +51,7 @@ Latest lint, TypeScript, production build, HTTP smoke and browser checks passed.
 
 - `public/images/sylvie-profile.png`: original supplied portrait, used in About.
 - `public/images/sylvie-portrait-cutout.png`: background-extracted portrait used by the frameless Hero. The built-in imagegen edit prompt and notes are in `HERO_UPDATE.md`.
-- `public/images/projects/`: original SVG illustrations labeled as illustrations, not screenshots. Genuine screenshots can replace them through the project data.
+- `public/images/projects/`: older illustrations retained as unused source assets. The current project cards use a compact image-free layout. Genuine screenshots are supported through the project data when available.
 - `public/cv/Umutoniwase_Sylvie_CV.pdf`: supplied professional CV, copied unchanged and served at `/cv/Umutoniwase_Sylvie_CV.pdf`.
 
 The older JPG is retained as an unused source asset. Certification documents can be added only when genuine files are supplied. No screenshots, credentials, technologies or achievements are fabricated.
@@ -68,4 +68,4 @@ Set `NEXT_PUBLIC_SITE_URL` only when the actual production URL is known. Hosting
 
 MK Scholars is disclosed as a Team Project; individual contributions are not invented. Earlier frontend projects retain their template attributions. Live Demo links remain absent until their deployments can be verified. See `PROJECT_VERIFICATION.md` for the historical repository review.
 
-Recent changes are documented in `PHASE_5_REPORT.md`, `IMAGERY_UPDATE.md` and `HERO_UPDATE.md`. Older phase reports describe earlier states and are retained for context.
+The latest visual simplification is documented in `CLEANUP_REPORT.md`. Earlier changes are documented in `PHASE_5_REPORT.md`, `IMAGERY_UPDATE.md` and `HERO_UPDATE.md`. Older phase reports describe earlier states and are retained for context.

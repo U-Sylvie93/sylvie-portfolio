@@ -2034,3 +2034,99 @@ textarea::placeholder {
   border-color: color-mix(in srgb, var(--mint) 22%, transparent);
   box-shadow: 0 0 60px color-mix(in srgb, var(--mint) 14%, transparent), inset 0 0 40px color-mix(in srgb, var(--mint) 7%, transparent);
 }
+/* Quiet, compact portfolio layout: fewer repeated visual elements. */
+.brand-name { display: inline-flex; align-items: center; min-height: 44px; color: var(--text); font-size: 15px; line-height: 1.3; font-weight: 600; letter-spacing: -.35px; white-space: nowrap; }
+.nav-container { padding-block: 12px; }
+.nav-actions { gap: 10px; }
+.section { padding-block: 68px; }
+.hero { padding-top: 20px; padding-bottom: 0; }
+.hero-grid { min-height: 550px; }
+.hero-portrait { height: 550px; }
+.section-heading { margin-bottom: 24px; }
+.section-heading p { margin-top: 10px; }
+h2 { font-size: clamp(26px, 2.7vw, 33px); letter-spacing: -.8px; }
+.eyebrow { margin-bottom: 12px; letter-spacing: 1.3px; }
+.project-toolbar { margin-bottom: 20px; }
+.project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.project-card { padding: 0; border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--surface) 55%, var(--bg)); box-shadow: none; }
+.project-card:hover { transform: none; border-color: color-mix(in srgb, var(--mint) 45%, var(--line)); box-shadow: none; }
+.project-content { padding: 22px; }
+.project-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; color: var(--muted); font-size: 10px; line-height: 1.5; margin-bottom: 14px; }
+.project-meta .project-ownership { display: inline-flex; align-items: center; gap: 5px; padding: 0; margin: 0; font-size: 10px; background: none; border: 0; border-radius: 0; }
+.project-heading h3 { font-size: 18px; line-height: 1.4; letter-spacing: -.35px; }
+.project-content > p { font-size: 13px; line-height: 1.75; margin-top: 10px; }
+.project-tags { gap: 4px 10px; margin-top: 14px; margin-bottom: 14px; min-height: 0; }
+.project-tags > span { padding: 0; background: none; border: 0; border-radius: 0; font-size: 11px; color: var(--muted); }
+.project-content > .project-note { font-size: 11px; line-height: 1.65; margin: 0 0 10px; }
+.project-links { border: 0; padding-top: 8px; gap: 14px; }
+.project-links a { padding: 0; min-height: 44px; background: none; border: 0; border-radius: 0; font-size: 12px; color: var(--mint); }
+.project-image { margin: 10px 10px 0; }
+.skills-section { background: transparent; }
+.skills-grid { gap: 16px; }
+.skill-card { padding: 20px; border-radius: 10px; background: transparent; }
+.skill-card::before { display: none; }
+.skill-card-title { gap: 9px; }
+.skill-card-title svg { width: 18px; height: 18px; }
+.skill-card-title h3 { font-size: 16px; }
+.skill-card p { min-height: 0; font-size: 12px; }
+.skill-tags { gap: 5px 12px; margin-top: 14px; }
+.skill-tags > .technology-badge { display: inline; padding: 0; border: 0; border-radius: 0; font-size: 12px; line-height: 1.9; color: var(--text); }
+.capabilities { justify-content: flex-start; gap: 8px 24px; padding-top: 20px; }
+.capabilities > span { font-size: 11px; }
+.certification-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.certification-card { padding: 20px; border-radius: 10px; }
+.technical-certificate { border-top-width: 1px; }
+.certificate-top { gap: 8px; margin-bottom: 12px; }
+.certificate-mark { width: 20px; height: 20px; border: 0; border-radius: 0; }
+.certificate-mark svg { width: 16px; height: 16px; }
+.certificate-top .small-label { font-size: 10px; line-height: 1.6; letter-spacing: .2px; }
+.certification-card h3 { font-size: 17px; line-height: 1.4; text-wrap: initial; }
+.certificate-date { margin-top: 10px; font-size: 12px; }
+.certificate-duration, .certificate-summary { margin-top: 6px; }
+.certificate-links { padding-top: 12px; }
+.certificate-links a { min-height: 40px; font-size: 12px; }
+.leadership-heading { margin-top: 28px; margin-bottom: 14px; }
+.leadership-heading .small-label { display: none; }
+.leadership-heading h3 { font-size: 17px; }
+.leadership-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.leadership-certificate { padding: 18px; }
+.leadership-certificate h3 { font-size: 15px; }
+.certificate-group-title { font-size: 14px; margin-bottom: 14px; }
+.about-grid { gap: 48px; }
+.about-grid h2 { font-size: clamp(26px, 2.6vw, 32px); }
+.about-copy p { font-size: 14px; }
+.about-copy .lead { font-size: 17px; }
+.profile-identity { margin-top: 22px; }
+.background-grid { gap: 36px; }
+.background-grid h2 { font-size: 27px; }
+.background-card { padding: 22px; border-radius: 10px; }
+.background-card p { min-height: 0; }
+.education-card { border-left-width: 1px; }
+.journey-list { margin-top: 22px; padding: 0; border: 0; background: transparent; }
+.journey-item { padding: 16px 0; }
+.contact-form { padding: 24px; }
+.contact-grid h2 { font-size: 33px; }
+.footer { padding-block: 26px; }
+.footer .brand-name { min-height: 30px; }
+@media (max-width: 1050px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 761px) and (max-width: 1024px) { .hero-grid { min-height: 490px; } .hero-portrait { height: 490px; } }
+@media (max-width: 900px) { .leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .about-grid { gap: 30px; } }
+@media (max-width: 760px) {
+  .brand-name { font-size: 14px; }
+  .nav-container { padding-block: 10px; }
+  .nav-actions { gap: 6px; }
+  .section { padding-block: 48px; }
+  .hero { padding-top: 12px; padding-bottom: 0; }
+  .hero-grid { min-height: 0; }
+  .hero-portrait { height: auto; }
+  .hero-copy { padding-block: 22px 6px; }
+  .hero-portrait { max-width: 340px; }
+  .background-grid h2 { font-size: 25px; }
+}
+@media (max-width: 650px) {
+  .project-grid, .certification-grid, .leadership-grid { grid-template-columns: minmax(0, 1fr); }
+  .project-content { padding: 20px; }
+  .certification-card { padding: 18px; }
+  .project-heading h3 { font-size: 18px; }
+  .project-content > p { font-size: 13px; }
+}

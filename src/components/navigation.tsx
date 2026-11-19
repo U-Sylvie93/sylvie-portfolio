@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { navigation } from "@/data/portfolio";
-import { CvButton, SocialLinks } from "./ui";
+import { CvButton } from "./ui";
 const subscribeTheme = (notify: () => void) => {
   window.addEventListener("sylvie-theme-change", notify);
   window.addEventListener("storage", notify);
@@ -63,10 +63,7 @@ export function Navigation() {
   return (
     <header className={`header ${scrolled ? "compact" : ""}`}>
       <div className="nav-container">
-        <a className="wordmark" href="#home" aria-label="Sylvie home">
-          <span className="logo-mark">s.</span>sylvie
-          <span className="mint">.</span>
-        </a>
+        <a className="brand-name" href="#home" aria-label="Umutoniwase Sylvie home">Umutoniwase Sylvie</a>
         <nav
           id="main-navigation"
           aria-label="Main navigation"
@@ -84,7 +81,6 @@ export function Navigation() {
           ))}
         </nav>
         <div className="nav-actions">
-          <SocialLinks />
           <button
             className="icon-button theme-button"
             onClick={toggleTheme}

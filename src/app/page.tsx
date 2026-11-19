@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero";
 import {
   About,
   Background,
-  GitHubSection,
   Skills,
 } from "@/components/sections";
 import { Projects } from "@/components/projects";
@@ -26,15 +25,12 @@ export default function Home() {
         <Certifications />
         <About />
         <Background />
-        <GitHubSection />
         <Contact deliveryConfigured={deliveryConfigured} />
       </main>
       <footer className="container footer">
         <div>
-          <a className="wordmark" href="#home">
-            sylvie<span className="mint">.</span>
-          </a>
-          <p>Umutoniwase Sylvie · Full-Stack Web Developer</p>
+          <a className="brand-name" href="#home">Umutoniwase Sylvie</a>
+          <p>Full-Stack Web Developer</p>
         </div>
         <div className="footer-right">
           <SocialLinks />
