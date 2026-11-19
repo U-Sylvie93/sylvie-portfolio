@@ -7,3 +7,8 @@ out/
 
 # Local browser review screenshots
 /preview/
+
+# Original certificate PDFs are private; publish metadata only.
+/public/certificates/python-essentials-1.pdf
+/public/certificates/computer-hardware-basics.pdf
+/public/certificates/it-essentials.pdf

@@ -7,7 +7,7 @@ Personal developer portfolio built with Next.js App Router, React, TypeScript, T
 - Restrained emerald theme with dark/light modes, a plain-name header and responsive layouts.
 - Frameless hero with a transparent portrait and soft emerald glow; original portrait in About.
 - Five compact, text-led project cards with accurate technologies, ownership disclosures and repository links.
-- Seven certifications: four technical and three leadership/professional development.
+- Ten certifications: seven technical and three leadership/professional development.
 - Downloadable professional CV from both navigation and Hero.
 - University of Rwanda IT education and developer journey.
 - Accessible navigation, keyboard focus, reduced-motion support and contact validation.
@@ -45,13 +45,14 @@ The scripts use Next.js Webpack mode. After starting the local server, run `node
 
 `scripts/emerald-browser-qa.mjs` is an optional Edge/Playwright regression suite. It uses the local Codex Playwright runtime by default. Set `PLAYWRIGHT_PATH` to a Playwright `index.mjs` file and edit the browser executable path if using another environment. Screenshots are written to ignored `preview/`.
 
-Latest lint, TypeScript, production build, HTTP smoke and browser checks passed. Browser checks cover both themes at seven widths, all images, project filters, seven certificates, both CV downloads, navigation, keyboard focus, reduced motion and form validation.
+Latest lint, TypeScript, production build, HTTP smoke and browser checks passed. Browser checks cover both themes at seven widths, all images, project filters, ten certificates, both CV downloads, navigation, keyboard focus, reduced motion and form validation.
 
 ## Images and CV
 
 - `public/images/sylvie-profile.png`: original supplied portrait, used in About.
 - `public/images/sylvie-portrait-cutout.png`: background-extracted portrait used by the frameless Hero. The built-in imagegen edit prompt and notes are in `HERO_UPDATE.md`.
 - `public/images/projects/`: older illustrations retained as unused source assets. The current project cards use a compact image-free layout. Genuine screenshots are supported through the project data when available.
+- The three new certificate cards publish course names, issuers, providers and completion dates only. Their original PDFs and certificate IDs are excluded from the public website and repository.
 - `public/cv/Umutoniwase_Sylvie_CV.pdf`: supplied professional CV, copied unchanged and served at `/cv/Umutoniwase_Sylvie_CV.pdf`.
 
 The older JPG is retained as an unused source asset. Certification documents can be added only when genuine files are supplied. No screenshots, credentials, technologies or achievements are fabricated.
@@ -68,4 +69,4 @@ Set `NEXT_PUBLIC_SITE_URL` only when the actual production URL is known. Hosting
 
 MK Scholars is disclosed as a Team Project; individual contributions are not invented. Earlier frontend projects retain their template attributions. Live Demo links remain absent until their deployments can be verified. See `PROJECT_VERIFICATION.md` for the historical repository review.
 
-The latest visual simplification is documented in `CLEANUP_REPORT.md`. Earlier changes are documented in `PHASE_5_REPORT.md`, `IMAGERY_UPDATE.md` and `HERO_UPDATE.md`. Older phase reports describe earlier states and are retained for context.
+The new course certificates and privacy choice are documented in `CERTIFICATE_UPDATE.md`. The latest visual simplification is documented in `CLEANUP_REPORT.md`. Earlier changes are documented in `PHASE_5_REPORT.md`, `IMAGERY_UPDATE.md` and `HERO_UPDATE.md`. Older phase reports describe earlier states and are retained for context.

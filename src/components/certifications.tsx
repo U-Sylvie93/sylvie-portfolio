@@ -12,11 +12,12 @@ export function CertificationCard({ certificate }: { certificate: Certification 
     <div className="certificate-top"><span className="certificate-mark" aria-hidden="true"><Icon size={20} /></span><span className="small-label">{certificate.issuer}</span></div>
     <h3 id={headingId}>{certificate.name}</h3>
     <p className="certificate-date">{certificate.dateLabel} <time dateTime={certificate.date}>{dateFormat.format(new Date(certificate.date + "T00:00:00Z"))}</time></p>
+    {certificate.provider && <p className="certificate-summary">Offered by {certificate.provider}</p>}
     {certificate.duration && <p className="certificate-duration">{certificate.duration}</p>}
     {certificate.summary && <p className="certificate-summary">{certificate.summary}</p>}
     {(certificate.credentialUrl || certificate.documentUrl) && <div className="certificate-links">
       {certificate.credentialUrl && <a className="text-link" href={certificate.credentialUrl} target="_blank" rel="noopener noreferrer" aria-label={"View " + certificate.name + " credential (opens in new tab)"}>View credential <ArrowUpRight size={15} /></a>}
-      {certificate.documentUrl && <a className="text-link" href={certificate.documentUrl} target="_blank" rel="noopener noreferrer">View certificate <ArrowUpRight size={15} /></a>}
+      {certificate.documentUrl && <a className="text-link" href={certificate.documentUrl} target="_blank" rel="noopener noreferrer" aria-label={"View " + certificate.name + " certificate PDF (opens in new tab)"}>View certificate (PDF) <ArrowUpRight size={15} aria-hidden="true" /></a>}
     </div>}
   </article>;
 }

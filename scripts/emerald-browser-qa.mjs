@@ -18,12 +18,28 @@ let activeBrowser;
   assert.equal(await page.locator('.project-card').count(), 5);
   assert.equal(await page.locator('.team-project').count(), 1);
   assert.equal(await page.locator('.personal-project').count(), 4);
-  assert.equal(await page.locator('.certification-card').count(), 7);
-  assert.equal(await page.locator('.technical-certificate').count(), 4);
+  assert.equal(await page.locator('.certification-card').count(), 10);
+  assert.equal(await page.locator('.technical-certificate').count(), 7);
   assert.equal(await page.locator('.leadership-certificate').count(), 3);
-  for (const name of ['Foundational C# with Microsoft', 'Responsive Web Design', 'Associate Python Developer', 'Introduction to Cybersecurity', 'iChoose Leadership Values Program', 'iDo Leadership Values Program', 'iLead Program']) {
+  for (const name of ['Foundational C# with Microsoft', 'Responsive Web Design', 'Python Essentials 1', 'Computer Hardware Basics', 'IT Essentials', 'Associate Python Developer', 'Introduction to Cybersecurity', 'iChoose Leadership Values Program', 'iDo Leadership Values Program', 'iLead Program']) {
     assert.equal(await page.locator('.certification-card').getByRole('heading',{name,exact:true}).count(),1);
   }
+  const newCertificates = [
+    ['Python Essentials 1','2026-06-28','TRUSTERLABS Ltd.','python-essentials-1.pdf'],
+    ['Computer Hardware Basics','2026-05-26','TRUSTERLABS Ltd.','computer-hardware-basics.pdf'],
+    ['IT Essentials','2026-04-26','University of Rwanda','it-essentials.pdf'],
+  ];
+  for(const [name,date,provider,file] of newCertificates){
+    const card=page.locator('.technical-certificate').filter({has:page.getByRole('heading',{name,exact:true})});
+    assert.equal(await card.locator('time').getAttribute('datetime'),date);
+    assert.ok((await card.innerText()).includes('Offered by '+provider));
+    assert.ok((await card.locator('.small-label').innerText()).includes('Cisco Networking Academy'));
+    assert.equal(await card.getByRole('link').count(),0,'Private certificates have no public PDF link');
+    assert.equal(fs.existsSync(path.join(process.cwd(),'public','certificates',file)),false,'Certificate PDF is excluded from public assets');
+    const response=await page.request.get(base+'/certificates/'+file);
+    assert.equal(response.status(),404,'Private certificate PDF is not publicly served');
+  }
+  console.log('PASS: three new certificate titles, exact dates/providers, no public PDF links and HTTP 404 for all three private certificate PDFs.');
   const csharp = page.locator('.certification-card').filter({has:page.getByRole('heading',{name:'Foundational C# with Microsoft',exact:true})});
   assert.equal(await csharp.locator('time').getAttribute('datetime'),'2026-10-12');
   assert.equal(await csharp.locator('.small-label').innerText(),'freeCodeCamp in collaboration with Microsoft');
@@ -50,7 +66,7 @@ let activeBrowser;
     assert.equal(hash(fs.readFileSync(await download.path())),hash(localPdf));
   }
   await checkDownload(page.locator('.nav-cv a'));
-  console.log('PASS: seven certificate entries (four technical / three leadership), new C# details, all CV URLs, PDF HTTP content/hash and navbar download.');
+  console.log('PASS: ten certificate entries (seven technical / three leadership), new C# details, all CV URLs, PDF HTTP content/hash and navbar download.');
   assert.equal(await page.locator('.hero img, .profile-photo').count(), 2);
   assert.equal(await page.locator('.project-image img').count(), 0);
   assert.equal(await page.locator('.logo-mark, .wordmark').count(),0);
@@ -124,7 +140,7 @@ let activeBrowser;
   await page.getByRole('button',{name:/Send Message/i}).click();
   assert.equal(await page.locator('[name="name"]').getAttribute('aria-invalid'),'true');
   assert.deepEqual(errors,[]);
-  console.log('PASS: five repositories, ownership, filters, seven credentials, portrait, compact project cards and plain-name header, CTA links, 14 responsive/theme combinations, theme persistence, mobile navigation/Escape/focus, CV downloads, focus outline, reduced motion and form validation.');
+  console.log('PASS: five repositories, ownership, filters, ten credentials, portrait, compact project cards and plain-name header, CTA links, 14 responsive/theme combinations, theme persistence, mobile navigation/Escape/focus, CV downloads, focus outline, reduced motion and form validation.');
   await page.setViewportSize({width:1440,height:1000});
   await page.locator('#certifications').scrollIntoViewIfNeeded();
   await page.screenshot({path:path.join(out,'phase5-certifications-light-desktop.png')});
