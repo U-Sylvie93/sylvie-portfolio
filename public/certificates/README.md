@@ -1,7 +1,7 @@
 # Certificate documents
 
-The owner chose to publish only the names, issuers, training providers and completion dates for Python Essentials 1, Computer Hardware Basics and IT Essentials. Their original PDFs remain outside the public website and repository. No certificate ID is added to these cards and no PDF download/view link is displayed.
+All ten owner-supplied certificate PDFs remain private, outside the public website and Git repository. The portfolio publishes their certificate names, issuers, providers where applicable, completion/issue dates and previously approved course-hour details. No new PDF previews, QR codes or extracted certificate IDs are published.
 
-The three private PDF filenames are ignored by Git. Browser regression checks also require their public URLs to return 404. Do not add those originals to this directory without a new explicit approval to publish the documents.
+The seven later-supplied PDFs match entries already present in the portfolio, so no duplicate records are added. Previously approved freeCodeCamp verification links remain unchanged; the separately approved CV remains downloadable.
 
-Previously approved external credential URLs for other certificates remain in src/data/certifications.ts. The separately approved downloadable CV is unchanged.
+All PDF files in this directory are ignored by Git. Browser regression checks require this directory to contain no PDFs. Publishing any original certificate document would require new explicit approval.

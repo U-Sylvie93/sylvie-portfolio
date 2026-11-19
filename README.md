@@ -8,9 +8,9 @@ Personal developer portfolio built with Next.js App Router, React, TypeScript, T
 - Frameless hero with a transparent portrait and soft emerald glow; original portrait in About.
 - Five compact, text-led project cards with accurate technologies, ownership disclosures and repository links.
 - Ten certifications: seven technical and three leadership/professional development.
-- Downloadable professional CV from both navigation and Hero.
+- Downloadable professional CV from navigation, Hero and Footer.
 - University of Rwanda IT education and developer journey.
-- Accessible navigation, keyboard focus, reduced-motion support and contact validation.
+- Accessible navigation, keyboard focus, reduced-motion support and contact validation. The responsive footer includes section links, verified email, social links, CV download and back-to-top navigation.
 
 Project records, credentials and personal information live in `src/data/`. Reusable page components live in `src/components/`.
 
@@ -45,7 +45,7 @@ The scripts use Next.js Webpack mode. After starting the local server, run `node
 
 `scripts/emerald-browser-qa.mjs` is an optional Edge/Playwright regression suite. It uses the local Codex Playwright runtime by default. Set `PLAYWRIGHT_PATH` to a Playwright `index.mjs` file and edit the browser executable path if using another environment. Screenshots are written to ignored `preview/`.
 
-Latest lint, TypeScript, production build, HTTP smoke and browser checks passed. Browser checks cover both themes at seven widths, all images, project filters, ten certificates, both CV downloads, navigation, keyboard focus, reduced motion and form validation.
+Latest lint, TypeScript, production build, HTTP smoke and browser checks passed. Browser checks cover both themes at seven widths, all images, project filters, ten certificates, all three CV downloads, navigation, keyboard focus, reduced motion and form validation.
 
 ## Images and CV
 
@@ -69,4 +69,4 @@ Set `NEXT_PUBLIC_SITE_URL` only when the actual production URL is known. Hosting
 
 MK Scholars is disclosed as a Team Project; individual contributions are not invented. Earlier frontend projects retain their template attributions. Live Demo links remain absent until their deployments can be verified. See `PROJECT_VERIFICATION.md` for the historical repository review.
 
-The new course certificates and privacy choice are documented in `CERTIFICATE_UPDATE.md`. The latest visual simplification is documented in `CLEANUP_REPORT.md`. Earlier changes are documented in `PHASE_5_REPORT.md`, `IMAGERY_UPDATE.md` and `HERO_UPDATE.md`. Older phase reports describe earlier states and are retained for context.
+The supplied certificates were matched to the existing ten entries, without publishing original PDFs. Certificate confirmation and the new footer are documented in `FOOTER_UPDATE.md`. The earlier course additions and privacy choice are documented in `CERTIFICATE_UPDATE.md`. The latest visual simplification is documented in `CLEANUP_REPORT.md`. Earlier changes are documented in `PHASE_5_REPORT.md`, `IMAGERY_UPDATE.md` and `HERO_UPDATE.md`. Older phase reports describe earlier states and are retained for context.

@@ -12,7 +12,8 @@ export interface Certification {
   documentUrl?: string;
   image?: string;
 }
-// Personal certification details supplied by Sylvie; no credential IDs inferred.
+// Metadata checked against the ten owner-supplied certificate PDFs.
+// Original PDFs and QR codes stay private; no newly extracted certificate IDs or duplicate entries added.
 export const certifications: Certification[] = [
   { name: "Foundational C# with Microsoft", issuer: "freeCodeCamp in collaboration with Microsoft", date: "2026-10-12", dateLabel: "Completed", category: "Technical", credentialUrl: "https://www.freecodecamp.org/certification/fcc-df763bc2-810a-4103-9cbe-d82075135302/foundational-c-sharp-with-microsoft" },
   { name: "Responsive Web Design", issuer: "freeCodeCamp", date: "2026-10-01", dateLabel: "Completed", category: "Technical", duration: "Approximately 300 hours of work", credentialUrl: "https://www.freecodecamp.org/certification/fcc-df763bc2-810a-4103-9cbe-d82075135302/responsive-web-design-v9" },
